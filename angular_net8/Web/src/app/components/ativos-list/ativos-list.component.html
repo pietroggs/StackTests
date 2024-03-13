@@ -1,0 +1,28 @@
+<div class="container my-5">
+  <h1 class="mb-3">Ativos</h1>
+  <table class="table" *ngIf="ativos && ativos.length > 0">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Local</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th></th>
+        <th>Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="items"
+      *ngFor="let ativo of ativos">
+        <td>{{ativo.nome}}</td>
+        <td>{{ativo.local}}</td>
+        <td>{{ativo.tipo}}</td>
+        <td ><b class="text-success">R$</b>{{ativo.valor}}</td>
+        <td><a [routerLink]="['/ativos', 'edit', ativo.id]">Editar</a></td>
+        <td>{{ativo.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!ativos || ativos.length == 0">Nenhum ativo localizado</p>
+</div>

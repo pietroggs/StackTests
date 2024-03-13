@@ -1,0 +1,49 @@
+<div class="container my-5">
+  <h1 class="mb-3">Editar ativo</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updateAtivo()">
+        <div class="form-group mb-3">
+          <label class="ml-1 mb-1" for="id">Id</label>
+          <input type="text" class="form-control" id="id" placeholder="Id do Ativo" name="id" readonly disabled="true"
+            [(ngModel)]='ativoDetails.id'>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="ml-1 mb-1" for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Nome do Ativo" name="nome"
+            [(ngModel)]='ativoDetails.nome'>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="ml-1 mb-1" for="local">Local</label>
+          <select class="form-control" id="local" name="local" [(ngModel)]='ativoDetails.local'>
+            <option>Recepção</option>
+            <option>Contabilidade</option>
+            <option>RH</option>
+            <option>T.I</option>
+            <option>Refeitório</option>
+          </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="ml-1 mb-1" for="tipo">Tipo</label>
+          <input type="text" class="form-control" id="tipo" placeholder="Tipo do Ativo" name="tipo"
+            [(ngModel)]='ativoDetails.tipo'>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="ml-1 mb-1" for="valor">Valor</label>
+          <input type="number" class="form-control" id="valor" placeholder="Valor do Ativo" name="valor"
+            [(ngModel)]='ativoDetails.valor'>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="button" style="margin-left: 1rem;" class="btn btn-danger"
+        (click)="deleteAtivo(ativoDetails.id)"
+        >Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
